@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "MoonExpress",
   "main": "index.js",
+  "engines": {
+        "node": "v14.18.1"
+      },    
   "scripts": {
     "start": "nodemon app.js"
   },
