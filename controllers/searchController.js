@@ -1,8 +1,12 @@
 "use strict";
+require('dotenv').config();
+
 
 const Rocket = require('../models/rocket');
 const SpatioPort = require('../models/spatioport');
 
+
+const url_base = process.env.URL + ":" + process.env.PORT;
 
 
 exports.createSearch = (req, res, next) => {
@@ -42,7 +46,36 @@ exports.createSearch = (req, res, next) => {
              err.code = "ROCKETS_EMPTY";
              throw err;
            }
-           res.status(200).json({result: rockets});
+
+           let rocketsWithLinks = rockets.map(rocket =>{
+
+            let links = [
+              {
+                self: {
+                  method: "GET",
+                  href: url_base + "/rocket/" + rocket._id.toString()
+                }
+              },
+              {
+                create: {
+                  method: "POST",
+                  href: url_base + "/rocket/"
+                }
+              },
+              {
+                delete: {
+                  method: "DELETE",
+                  href: url_base + "/rocket/" + rocket._id.toString()
+                }
+              }
+            ];
+
+            rocket = rocket.toJSON();
+            rocket.links = links;
+            return rocket;
+           });
+
+           res.status(200).json({result: rocketsWithLinks});
         });
       });
     })

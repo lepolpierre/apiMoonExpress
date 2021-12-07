@@ -3,11 +3,11 @@
 const Spatioport = require('../models/spatioport');
 
 exports.getSpatioports = (req, res, next) => {
-  // if (req.user.level !== 2) {
-  //   const error = new Error("Vous ne pouvez pas...");
-  //   error.statusCode = 401;
-  //   throw error;
-  // }
+  if (req.user.level !== 2) {
+    const error = new Error("Vous ne pouvez pas...");
+    error.statusCode = 401;
+    throw error;
+  }
   
   Spatioport.find()
   .then(spatioports => {
@@ -22,11 +22,11 @@ exports.getSpatioports = (req, res, next) => {
 exports.getSpatioport = (req, res, next) => {
   const SpatioportId = req.params.SpatioportId;
 
-  // if (req.user.level !== 2) {
-  //   const error = new Error("Vous ne pouvez pas...");
-  //   error.statusCode = 401;
-  //   throw error;
-  // }
+  if (req.user.level !== 2) {
+    const error = new Error("Vous ne pouvez pas...");
+    error.statusCode = 401;
+    throw error;
+  }
 
   Spatioport.findById(SpatioportId)
   .then(spatioport => {

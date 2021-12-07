@@ -17,7 +17,7 @@ router.get('/rocket/:rocketId', rocketsController.getRocket);
 router.post('/rocket/', isAuth, rocketsController.createRocket);
 
 // /rocket/:rocket => DELETE
-router.delete('/spatioport/:rocketId', isAuth, rocketsController.deleteRocket);
+router.delete('/rocket/:rocketId', isAuth, rocketsController.deleteRocket);
 
 module.exports = router;
 
