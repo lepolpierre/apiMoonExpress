@@ -46,7 +46,7 @@ exports.getRocket = (req, res, next) => {
  */
 exports.createRocket = (req, res, next) => {
     const {date, nbPlace, nbPlaceRemaining, price, image, name, spatioportDepartureId, spatioportArrivalId} = req.body;
-    
+    console.log(req.body);
     if(!date || !nbPlace || !nbPlaceRemaining || !price || !image || !name || !spatioportDepartureId || !spatioportArrivalId){
         const err = new Error("Formulaire création de rocket invalide, champs manquanr!");
         err.statusCode = 404;

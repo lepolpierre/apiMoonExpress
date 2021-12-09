@@ -12,7 +12,7 @@ exports.getSpatioports = (req, res, next) => {
   Spatioport.find()
   .then(spatioports => {
     // console.log(spatioports[0].toJSON());
-    res.json({spatioports});
+    res.status(200).json({spatioports});
   })
   .catch(err => {
     next(err);
@@ -20,14 +20,13 @@ exports.getSpatioports = (req, res, next) => {
 };
 
 exports.getSpatioport = (req, res, next) => {
-  const SpatioportId = req.params.SpatioportId;
+  const SpatioportId = req.params.spatioportId;
 
   if (req.user.level !== 2) {
     const error = new Error("Vous ne pouvez pas...");
     error.statusCode = 401;
     throw error;
   }
-
   Spatioport.findById(SpatioportId)
   .then(spatioport => {
     if (!spatioport) {
@@ -35,7 +34,7 @@ exports.getSpatioport = (req, res, next) => {
       error.statusCode = 404;
       throw error;
     }
-    res.json({
+    res.status(200).json({
       spatioport: spatioport
     });
   })
@@ -60,7 +59,7 @@ exports.createSpatioport = (req, res, next) => {
 
   spatioport.save()
     .then(() => {
-      res.status(200).json({ message: "Spatioport créé", spatioport: spatioport });
+      res.status(201).json({ message: "Spatioport créé", spatioport: spatioport });
     })
     .catch(err => {
       next(err);
@@ -79,7 +78,7 @@ exports.deleteSpatioport = (req, res, next) => {
   Spatioport.findByIdAndRemove(spatioportId)
   .then(() => {
     console.log('Spatioport supprimé');
-    res.status(200).json({ message: "Spatioport supprimé" });
+    res.status(204).json({ message: "Spatioport supprimé" });
   });
   
 };
