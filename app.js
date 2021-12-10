@@ -7,6 +7,12 @@ const mongoose = require('mongoose');
 var hateoasLinker = require('express-hateoas-links');
 const app = express();
 
+// swagger
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
 // Déclaration d'un parser pour analyser "le corps (body)" d'une 'requête entrante avec POST  
 // Permet donc d'analyser
 

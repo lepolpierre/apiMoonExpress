@@ -1,0 +1,596 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "defaultTitle",
+      "description": "defaultDescription",
+      "version": "0.1-oas3"
+    },
+    "servers": [
+      {
+        "url": "/"
+      }
+    ],
+    "paths": {
+      "/spatioport": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model5"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/rocket": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model8"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        },
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Model0"
+                }
+              }
+            },
+            "x-examples": {
+              "application/json": "{\n   \"date\" : \"2021-11-17\", \n   \"nbPlace\" : 5, \n   \"nbPlaceRemaining\" : 2, \n   \"price\" : 100, \n   \"image\" : \"1.jpg\", \n   \"name\" : \"Lune\", \n   \"spatioportDepartureId\" : \"61873bdcad6ebbde689ca504\", \n   \"spatioportArrivalId\" : \"61873beaad6ebbde689ca506\"\n}"
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model6"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/reservation/6189b05e59281616b79a29b8/1/59": {
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Model3"
+                }
+              }
+            },
+            "x-examples": {
+              "application/json": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123\"\n}"
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model9"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model10"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/reservation": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model11"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/{param0}/{param1}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "param0",
+              "in": "path",
+              "description": "Example values form path are: 'spatioport' and 'rocket'",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "param1",
+              "in": "path",
+              "description": "Example values form path are: '61873beaad6ebbde689ca50' and '6189b05e59281616b79a29b8'",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model7"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model4"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/auth/{param2}": {
+        "post": {
+          "parameters": [
+            {
+              "name": "param2",
+              "in": "path",
+              "description": "Example values form path are: 'signup' and 'login'",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Model1"
+                }
+              }
+            },
+            "x-examples": {
+              "application/json": "{\n    \"email\": \"admin@admin.com\",\n    \"name\": \"admin\",\n    \"password\": \"123\",\n    \"level\": 1\n}"
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model13"
+                  }
+                }
+              }
+            },
+            "201": {
+              "description": "Definition generated from Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Model12"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Model0": {
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "nbPlace": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nbPlaceRemaining": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "price": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "image": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "spatioportDepartureId": {
+              "type": "string"
+            },
+            "spatioportArrivalId": {
+              "type": "string"
+            }
+          }
+        },
+        "Model1": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "level": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Model3": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        },
+        "Model4": {
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "statusCode": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Spatioports": {
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "position": {
+              "type": "string"
+            },
+            "__v": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Model5": {
+          "properties": {
+            "spatioports": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Spatioports"
+              }
+            }
+          }
+        },
+        "Rocket": {
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "nbPlace": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nbPlaceRemaining": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "price": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "image": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "spatioportDepartureId": {
+              "type": "string"
+            },
+            "spatioportArrivalId": {
+              "type": "string"
+            },
+            "_id": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "__v": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Model6": {
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "rocket": {
+              "$ref": "#/components/schemas/Rocket"
+            }
+          }
+        },
+        "Model7_Rocket": {
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "nbPlace": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nbPlaceRemaining": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "price": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "image": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "spatioportDepartureId": {
+              "type": "string"
+            },
+            "spatioportArrivalId": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "__v": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Model7": {
+          "properties": {
+            "rocket": {
+              "$ref": "#/components/schemas/Model7_Rocket"
+            }
+          }
+        },
+        "Rockets": {
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "nbPlace": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nbPlaceRemaining": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "price": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "image": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "spatioportDepartureId": {
+              "type": "string"
+            },
+            "spatioportArrivalId": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "__v": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Model8": {
+          "properties": {
+            "rockets": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Rockets"
+              }
+            }
+          }
+        },
+        "Reservation": {
+          "properties": {
+            "userId": {
+              "type": "string"
+            },
+            "nbPerson": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "price": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "rocketId": {
+              "type": "string"
+            },
+            "_id": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "__v": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Model9": {
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "reservation": {
+              "$ref": "#/components/schemas/Reservation"
+            }
+          }
+        },
+        "Model10": {
+          "properties": {
+            "error": {
+              "type": "string"
+            }
+          }
+        },
+        "Model11": {
+          "properties": {
+            "reservations": {
+              "type": "array",
+              "items": {}
+            }
+          }
+        },
+        "Model12": {
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "string"
+            }
+          }
+        },
+        "Model13": {
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "Secured": {
+          "type": "oauth2",
+          "flows": {
+            "implicit": {
+              "authorizationUrl": "https://example.com",
+              "scopes": {}
+            }
+          }
+        }
+      }
+    }
+  }
