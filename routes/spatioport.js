@@ -8,7 +8,7 @@ const spatioportsController = require('../controllers/spatioportsController');
 const isAuth = require('../middleware/is-auth');
 
 // /spatioport/ => GET
-router.get('/spatioport/', isAuth, spatioportsController.getSpatioports);
+router.get('/spatioport/', spatioportsController.getSpatioports);
 
 // /spatioport/spatioportId => GET
 router.get('/spatioport/:spatioportId', isAuth, spatioportsController.getSpatioport);

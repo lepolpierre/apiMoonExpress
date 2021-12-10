@@ -46,6 +46,13 @@ exports.createReservation = (req, res, next) => {
     const nbPerson = req.params.nbPerson;
     const price = req.params.price;
 
+    if(!price || !rocketId || !nbPerson){
+        const err = new Error("Erreur de création de réservation");
+        err.statusCode = 404;
+        err.code = "CREATION_RESERVATION";
+        throw err;
+    }
+
     const reservation = new Reservation({
         rocketId: rocketId,
         nbPerson: nbPerson,

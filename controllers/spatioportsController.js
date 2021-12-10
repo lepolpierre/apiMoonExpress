@@ -12,7 +12,7 @@ exports.getSpatioports = (req, res, next) => {
   
   Spatioport.find()
   .then(spatioports => {
-    // console.log(spatioports[0].toJSON());
+    console.log(spatioports[0].toJSON());
     res.status(200).json({spatioports});
   })
   .catch(err => {
