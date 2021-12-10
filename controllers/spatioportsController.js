@@ -3,11 +3,12 @@
 const Spatioport = require('../models/spatioport');
 
 exports.getSpatioports = (req, res, next) => {
-  if (req.user.level !== 2) {
-    const error = new Error("Vous ne pouvez pas...");
-    error.statusCode = 401;
-    throw error;
-  }
+  // Mis en commentaire afin qu'on puisse récupérer les noms des spatioports pour une le formulaire de recherche même étant un invité.
+  // if (req.user.level !== 2) {
+  //   const error = new Error("Vous ne pouvez pas...");
+  //   error.statusCode = 401;
+  //   throw error;
+  // }
   
   Spatioport.find()
   .then(spatioports => {
