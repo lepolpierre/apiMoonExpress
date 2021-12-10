@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-      "title": "defaultTitle",
-      "description": "defaultDescription",
+      "title": "Moon Express",
+      "description": "API moon-Express",
       "version": "0.1-oas3"
     },
     "servers": [
@@ -15,7 +15,7 @@
         "get": {
           "responses": {
             "200": {
-              "description": "Definition generated from Swagger Inspector",
+              "description": "Permet de récupérer l'ensemble des spatioports",
               "content": {
                 "application/json": {
                   "schema": {
@@ -36,7 +36,7 @@
         "get": {
           "responses": {
             "200": {
-              "description": "Definition generated from Swagger Inspector",
+              "description": "Permet de récupérer l'ensemble des rockets",
               "content": {
                 "application/json": {
                   "schema": {
